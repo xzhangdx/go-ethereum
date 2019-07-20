@@ -143,6 +143,10 @@ func (d *Dpos) Author(header *types.Header) (common.Address, error) {
 	return header.Validator, nil
 }
 
+func (d *Dpos) Coinbase(header *types.Header) (common.Address, error) {
+	return header.Coinbase, nil
+}
+
 func (d *Dpos) VerifyHeader(chain consensus.ChainReader, header *types.Header, seal bool) error {
 	return d.verifyHeader(chain, header, nil)
 }
